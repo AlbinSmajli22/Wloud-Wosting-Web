@@ -44,7 +44,7 @@ const jsonData = JSON.stringify(data);
 const url = "https://us12.api.mailchimp.com/3.0/lists/75c4842a5e";
 const options = {
     method: "POST",
-    auth: "erjon1:f7ce764e695ffa344115fe9739318bbf-us12"
+    auth: "web:02bbabb3808c301145641763e852f3d4-us12"
 };
 
 const Request = https.request(url, options, function(response){
@@ -71,4 +71,3 @@ app.listen(3000, function() {
     console.log("Server started on port 3000");
   });
 
-//   991efbde82044fb05cb551a64813bf60-us12
