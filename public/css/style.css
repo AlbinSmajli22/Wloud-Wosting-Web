@@ -79,7 +79,10 @@ pre{
 
 
 /* Showcase */
-
+.slider-container{
+    position: relative;
+    margin-left: 350px;
+}
 .showcase{
     background-color: var(--primary-color);
     color: #fff;
