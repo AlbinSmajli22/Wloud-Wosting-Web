@@ -34,7 +34,7 @@
             </div>
 
             <div class="showcase-form card">
-                <h2>Signup to <i>Tazzubi Platform</i></h2>
+                <h2>Signup to <i>Tazzubi</i></h2>
                 <form action="/" method="post"> 
                     <div class="form-control">
                         <input type="text" name="name" placeholder="First Name" required>
@@ -137,29 +137,32 @@
             </div>
         </div>
     </footer>
+    
+    
+    
 
-    <!-- Pixi Slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
+    <!-- Pixi Slider  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
     <script>
-        // Create a Pixi.js application
+      
         const app = new PIXI.Application({
             width: 800,
             height: 200,
             backgroundColor: 0xffffff,
         });
-
-        // Get a reference to the slider container element
+        
+        
         const sliderContainer = document.querySelector('.slider-container');
         sliderContainer.appendChild(app.view);
 
-        // Create a container for the cards
+        
         const container = new PIXI.Container();
-        container.x = 50; // Adjust the x position of the container
+        container.x = 50; 
 
-        // Add the container to the stage
+       
         app.stage.addChild(container);
 
-        // Create an array of language card data
+   
         const languageCards = [
             {
                 title: 'Node.js',
@@ -191,25 +194,25 @@
             },
         ];
 
-        // Create language cards and add them to the container
+    
         languageCards.forEach((cardData, index) => {
             const card = createCard(cardData);
-            card.x = index * 150 ; // Adjust the x position of each card
+            card.x = index * 150 ; 
             container.addChild(card);
         });
 
-        // Create a language card
+      
         function createCard(data) {
             const card = new PIXI.Container();
 
-            // Create the card background
+            
             const background = new PIXI.Graphics();
             background.beginFill(0xeeeeee);
             background.drawRect(0, 0, 120, 160);
             background.endFill();
             card.addChild(background);
 
-            // Create the language title
+            
             const title = new PIXI.Text(data.title, {
                 fontSize: 16,
                 fill: 0x000000,
@@ -218,7 +221,7 @@
             title.position.set(60, 20);
             card.addChild(title);
 
-            // Create the language logo
+            
             const logo = PIXI.Sprite.from(data.imageSrc);
             logo.anchor.set(0.5, 0);
             logo.position.set(60, 50);
@@ -227,12 +230,12 @@
             return card;
         }
 
-        // Function to animate the language card slider
+        
         function animateSlider() {
             const cardWidth = 150;
             const speed = 2;
 
-            // Animate the cards to slide horizontally
+            
             app.ticker.add(() => {
                 container.x -= speed;
                 if (container.x < -(languageCards.length * cardWidth)) {
@@ -241,8 +244,9 @@
             });
         }
 
-        // Call the animateSlider function to start the animation
+        
         animateSlider();
     </script>
+     
 </body>
 </html>

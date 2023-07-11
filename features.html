@@ -15,7 +15,7 @@
 
     <div class="navbar">
         <div class="container flex">
-        <h1 class="logo">Palloma.</h1>
+            <h1 class="logo"><a href="index.html">Tazzubi.</a></h1>
         <nav>
            <ul>
                <li><a href="index.html">Home</a></li>
@@ -83,6 +83,62 @@
     </div>
    </section>
 
+   
+   <h1 class="wiggle" >Make your device wiggle from speed</h1>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
+    <script>
+        const app = new PIXI.Application({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundColor: 0xffffff, 
+            resolution: window.devicePixelRatio || 1,
+        });
+
+        document.body.appendChild(app.view);
+
+        const imageTexture = PIXI.Texture.from('image/clouddd.jpg');
+        const imageSprite = new PIXI.Sprite(imageTexture);
+
+        imageSprite.anchor.set(0.57);
+        imageSprite.x = app.screen.width / 2.2;
+        imageSprite.y = app.screen.height / 2.5;
+
+        app.stage.addChild(imageSprite);
+
+        let isHovered = false;
+
+        imageSprite.interactive = true;
+        imageSprite.buttonMode = true;
+
+        imageSprite.on('mouseover', () => {
+            isHovered = true;
+        });
+
+        imageSprite.on('mouseout', () => {
+            isHovered = false;
+        });
+
+        app.ticker.add(() => {
+            if (isHovered) {
+                imageSprite.rotation += 0.0;
+                imageSprite.x += Math.sin(app.ticker.lastTime * 0.01) * 2;
+                imageSprite.y += Math.cos(app.ticker.lastTime * 0.01) * 2;
+                imageSprite.scale.x = 1 + Math.sin(app.ticker.lastTime * 0.005) * 0.6;
+            imageSprite.scale.y = 1 + Math.cos(app.ticker.lastTime * 0.005) * 0.6;
+            }
+            imageSprite.scale.x = 1 + Math.sin(app.ticker.lastTime * 0.005) * 0.03;
+            imageSprite.scale.y = 1 + Math.cos(app.ticker.lastTime * 0.005) * 0.03;
+        });
+
+        function resize() {
+            app.renderer.resize(window.innerWidth, window.innerHeight);
+            imageSprite.x = app.screen.width / 2;
+            imageSprite.y = app.screen.height / 2;
+        }
+
+        window.addEventListener('resize', resize);
+    </script>
+
 
 
 <!-- Footer -->
@@ -90,7 +146,7 @@
 <footer class="footer bg-dark py-5">
     <div class="container grid grid-3">
         <div>
-            <h1>Palloma</h1>
+            <h1>Tazzubi.</h1>
             <p>Copyright &copy; 2023</p>
         </div>
         <nav>  <ul>
@@ -107,6 +163,8 @@
     </div>
 </footer>
 </body>
+
+    
 </html>
 
 
@@ -118,7 +176,5 @@
 
 
 
-
-    <script src="script.js"></script>
-</body>
-</html>
+  
+    

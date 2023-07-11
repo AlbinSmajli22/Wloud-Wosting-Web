@@ -76,6 +76,11 @@ pre{
 .navbar a:hover{
     border-bottom: 2px #fff solid;
 }
+.wiggle{
+    text-align: center;
+    font-size: 80px;
+    font-family:fantasy;
+}
 
 
 /* Showcase */
@@ -139,6 +144,18 @@ pre{
     -webkit-transform: skewY(-3deg);
     -moz-transform: skewY(-3deg);
     -ms-transform: skewY(-3deg);
+}
+@keyframes rotate3DAnimation {
+    0% {
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(1, 0, 0, 360deg);
+    }
+}
+
+.logo {
+    animation: rotate3DAnimation 5s linear infinite;
 }
 /* Stats */
 .stats{
